@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="../../dist/js/config.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Asistencia a socializacion</title>
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <style>
+        .container-custom {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <span class="brand-text font-weight-light">Registro de Asistencia</span>
+            </a>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <div class="content">
+            <div class="container container-custom">
+                <h1 class="text-center">Registro de Asistencia a socializacion</h1>
+                <form id="registroForm">
+                    <div id="parte1">
+                        <h3>Datos de la Persona</h3>
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" name="apellido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="documento">Documento</label>
+                            <input type="text" class="form-control" id="documento" name="documento" required>
+                            <small id="documentoHelp" class="form-text text-muted">Verificando...</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="codigo">Código</label>
+                            <input type="text" class="form-control" id="codigo" name="codigo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                            <input type="text" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sexo">Sexo</label>
+                            <select class="form-control" id="sexo" name="sexo" required>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="idPoblacionEspecial">Población Especial</label>
+                            <select class="form-control" id="idPoblacionEspecial" name="idPoblacionEspecial" required>
+                                <option value="1">Población 1</option>
+                                <option value="2">Población 2</option>
+                                <!-- Agregar más opciones según sea necesario -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="idTipoUsuario">Tipo de Usuario</label>
+                            <select class="form-control" id="idTipoUsuario" name="idTipoUsuario" required>
+                                <option value="1">Usuario 1</option>
+                                <option value="2">Usuario 2</option>
+                                <!-- Agregar más opciones según sea necesario -->
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="mostrarParte2()">Siguiente</button>
+                    </div>
+
+                    <div id="parte2" style="display:none;">
+                        <h3>Datos de la socializacion</h3>
+                       <div class="form-group">
+                           
+                            <div class="form-group">
+                                <label for="fechaVisita">Fecha de Visita</label>
+                                <input type="text" class="form-control" id="fechaVisita" name="fechaVisita" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="idUniversidad">ID de Universidad</label>
+                                <select class="form-control" id="idUniversidad" name="idUniversidad" required>
+                                    <!-- Opciones de ID de Universidad -->
+                                    <option value="1">Universidad 1</option>
+                                    <option value="2">Universidad 2</option>
+                                    <!-- Agregar más opciones según sea necesario -->
+                                </select>
+                            </div>                
+                            <div class="form-group">
+                                <label for="idProgramaAcademico">ID de Programa Académico</label>
+                                <select class="form-control" id="idProgramaAcademico" name="idProgramaAcademico" onchange="mostrarCampoOtroPrograma(this.value)" required>
+                                    <!-- Opciones de ID de Programa Académico -->
+                                    <option value="1">Programa Académico 1</option>
+                                    <option value="2">Programa Académico 2</option>
+                                    <!-- Agregar más opciones según sea necesario -->
+                                </select>
+                            </div>
+                            <div class="form-group" id="campoOtroPrograma" style="display: none;">
+                                <label for="otroPrograma">Otro Programa</label>
+                                <input type="text" class="form-control" id="otroPrograma" name="otroPrograma">
+                            </div>
+
+
+                        <button type="button" class="btn btn-secondary" onclick="mostrarParte1()">Anterior</button>
+                        <button type="submit" class="btn btn-success">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- AdminLTE JS -->
+<script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
+<script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="../../dist/js/asistencia/common.js"></script>
+<script src="../../dist/js/asistencia/socializacion.js"></script>
+
+<script>
+   
+</script>
+</body>
+</html>

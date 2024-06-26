@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Asistencia</title>
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css">
+    <style>
+        .container-custom {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .btn-custom {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .collapse-inner {
+            padding: 10px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+        }
+        .collapse-inner .btn {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <span class="brand-text font-weight-light">Registro de Asistencia</span>
+            </a>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <div class="content">
+            <div class="container container-custom">
+                <h1 class="text-center">Registro de Asistencia</h1>
+                <p class="text-center">Seleccione la opción donde desea registrar la asistencia:</p>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary btn-block btn-custom" data-toggle="collapse" data-target="#collapseCursos" aria-expanded="false" aria-controls="collapseCursos">Registro Asistencia a Cursos</button>
+                        <div class="collapse" id="collapseCursos">
+                            <div class="collapse-inner">
+                                <button class="btn btn-primary btn-block" onclick="registrar('cursos')">Registro Asistencia a Cursos</button>
+                                <button class="btn btn-secondary btn-block" onclick="registrar('cursos_colegios')">Registro Asistencia a Cursos de Colegios</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-success btn-block btn-custom" data-toggle="collapse" data-target="#collapseSteam" aria-expanded="false" aria-controls="collapseSteam">Registro Asistencia a STEAM</button>
+                        <div class="collapse" id="collapseSteam">
+                            <div class="collapse-inner">
+                                <button class="btn btn-success btn-block" onclick="registrar('steam_school')">Registro Asistencia a STEAM School</button>
+                                <button class="btn btn-danger btn-block" onclick="registrar('steam_young')">Registro Asistencia a STEAM Young</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-success btn-block btn-custom" data-toggle="collapse" data-target="#collapseSocializacion" aria-expanded="false" aria-controls="collapseSocializacion">Registro Asistencia a Socializacion</button>
+                        <div class="collapse" id="collapseSocializacion">
+                            <div class="collapse-inner">
+                                <button class="btn btn-warning btn-block btn-custom" onclick="registrar('socializacion')">Registro Asistencia a Socialización</button>
+                                <button class="btn btn-info btn-block btn-custom" onclick="registrar('socializacion_colegios')">Registro Asistencia a Socialización de Colegios</button>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                    <div class="col-md-6">
+                        <button class="btn btn-dark btn-block btn-custom" onclick="registrar('semillero')">Registro Asistencia a Semillero</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-secondary btn-block btn-custom" onclick="registrar('clase')">Registro Asistencia a Clase</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary btn-block btn-custom" onclick="registrar('sustentacion_proyecto')">Registro Asistencia a Sustentación de Proyecto de Grado</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-success btn-block btn-custom" onclick="registrar('grabacion')">Registro Asistencia a Grabación</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- AdminLTE JS -->
+<script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
+<script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
+
+<script>
+    function registrar(tipo) {
+        
+        // Aquí puedes redirigir a otra página o abrir un formulario específico para el tipo seleccionado
+        // Ejemplo:
+        // window.location.href = 'registro_' + tipo + '.html';
+
+        switch (tipo) {
+            case "steam_school":
+                location.href = "./asistencia/colegio.html";
+                break;
+            case "steam_young":
+                console.log("This is a banana.");
+                break;
+            case "cursos":
+                location.href = "./asistencia/curso.html";
+                break;
+            case "cursos_colegios":
+                location.href = "./asistencia/cursoColegio.html";
+                break;
+            case "socializacion":
+                location.href = "./asistencia/socializacion.html";
+                break;
+            case "socializacion_colegios":
+                location.href = "./asistencia/socializacioncolegio.html";
+                break;
+            case "semillero":
+                location.href = "./asistencia/semillero.html";
+                break;
+            case "clase":
+                location.href = "./asistencia/clase.html";
+                break;
+            case "grabacion":
+                location.href = "./asistencia/grabacion.html";
+                break;
+            case "sustentacion_proyecto":
+                location.href = "./asistencia/grado.html";
+                break;
+            
+
+            }
+
+        }
+</script>
+</body>
+</html>

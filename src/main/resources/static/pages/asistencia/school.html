@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="../../dist/js/config.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Asistencia a Semillero</title>
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <style>
+        .container-custom {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <span class="brand-text font-weight-light">Registro de Asistencia a Semillero</span>
+            </a>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <div class="content">
+            <div class="container container-custom">
+                <h1 class="text-center">Registro de Asistencia a Semillero</h1>
+                <form id="registroForm">
+                    <div class="form-group">
+                        <label for="idColegio">Colegio</label>
+                        <select class="form-control" id="idColegio" name="idColegio" required>
+                            <!-- Opciones del dropdown de colegios -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="idCursos">Curso</label>
+                        <select class="form-control" id="idCurso" name="idCurso" required>
+                            <!-- Opciones del dropdown de cursos -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sexo">Sexo</label>
+                        <select class="form-control" id="sexo" name="sexo" required>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                            <!-- Opciones adicionales si es necesario -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="semestre">Semestre</label>
+                        <input type="text" class="form-control" id="semestre" name="semestre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idPoblacionEspecial">Población Especial</label>
+                        <select class="form-control" id="idPoblacionEspecial" name="idPoblacionEspecial" required>
+                            <!-- Opciones del dropdown de poblaciones especiales -->
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </form>
+            </div>
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- AdminLTE JS -->
+<script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
+<script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!--script src="../../dist/js/asistencia/common.js"></script-->
+<script src="../../dist/js/asistencia/school.js"></script>
+
+<script>
+   
+</script>
+</body>
+</html>
